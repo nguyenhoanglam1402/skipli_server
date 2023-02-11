@@ -45,6 +45,10 @@ export const fetchAllGitHubLikes = async (req: Request, res: Response) => {
 export const fetchGithubUsers = async (req: Request, res: Response) => {
   try {
     const { phoneNumber, q, page, per_page: perPage } = req.query;
+    console.log(
+      "🚀 ~ file: github.controller.ts:48 ~ fetchGithubUsers ~ phoneNumber",
+      phoneNumber
+    );
     if (
       typeof phoneNumber !== "string" ||
       typeof q !== "string" ||
@@ -52,11 +56,16 @@ export const fetchGithubUsers = async (req: Request, res: Response) => {
       typeof perPage !== "string"
     )
       throw new Error("Query must be string");
+
     const result = await fetchGithubUsersService(
       phoneNumber,
       q,
       Number.parseInt(page),
       Number.parseInt(perPage)
+    );
+    console.log(
+      "🚀 ~ file: github.controller.ts:65 ~ fetchGithubUsers ~ result",
+      result
     );
     return res.status(200).json({ result });
   } catch (exception: any) {

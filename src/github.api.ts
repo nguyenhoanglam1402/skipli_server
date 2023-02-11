@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const headers = {
-  Authorization:
-    "token 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",
+  Authorization: "token <Github Authentication>",
 };
 
 export const fetchGitHubUsersAPI = (

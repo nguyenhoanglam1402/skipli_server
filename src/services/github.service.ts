@@ -56,12 +56,14 @@ export const fetchGithubUsersService = async (
   });
 
   const result = (await getGitHubLikesService(phoneNumber)) || { like: [] };
-  result.like.map((item: any) => {
-    const index = data.findIndex((user) => user.id === Number.parseInt(item));
+  console.log("🚀 ~ file: github.service.ts:59 ~ result", result);
+  if (result.like.length !== 0)
+    result.like.map((item: any) => {
+      const index = data.findIndex((user) => user.id === Number.parseInt(item));
 
-    if (index === -1) return;
-    data[index].like = true;
-  });
+      if (index === -1) return;
+      data[index].like = true;
+    });
 
   return { totalRow: totalCount, data };
 };

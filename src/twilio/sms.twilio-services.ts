@@ -1,5 +1,5 @@
-const accountSid = "ACc1c1b5bcd3596df5fd128cb030f0f422";
-const authToken = "f9cd1352eb759ec3209a6f54b2069a55";
+const accountSid = ""; //Account SID of Twilio;
+const authToken = ""; //Auth Token of Twilio;
 
 const client = require("twilio")(accountSid, authToken, {
   autoRetry: true,

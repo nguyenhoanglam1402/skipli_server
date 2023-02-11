@@ -72,12 +72,14 @@ const fetchGithubUsersService = (phoneNumber, q, page, perPage) => __awaiter(voi
         data.push(userData.data);
     });
     const result = (yield (0, exports.getGitHubLikesService)(phoneNumber)) || { like: [] };
-    result.like.map((item) => {
-        const index = data.findIndex((user) => user.id === Number.parseInt(item));
-        if (index === -1)
-            return;
-        data[index].like = true;
-    });
+    console.log("🚀 ~ file: github.service.ts:59 ~ result", result);
+    if (result.like.length !== 0)
+        result.like.map((item) => {
+            const index = data.findIndex((user) => user.id === Number.parseInt(item));
+            if (index === -1)
+                return;
+            data[index].like = true;
+        });
     return { totalRow: totalCount, data };
 });
 exports.fetchGithubUsersService = fetchGithubUsersService;

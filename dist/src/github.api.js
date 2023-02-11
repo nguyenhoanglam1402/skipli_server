@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getGitHubUser = exports.fetchGitHubUsersAPI = void 0;
 const axios_1 = __importDefault(require("axios"));
 const headers = {
-    Authorization: "token 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",
+    Authorization: "token <Github Authentication>",
 };
 const fetchGitHubUsersAPI = (q, page, perPage) => {
     return axios_1.default.get("https://api.github.com/search/users", {
