@@ -2,12 +2,12 @@
 
 _**src**_ - source code structure folder
 
-config - contain config file for firebase services
-controllers - contain controller of express app
-helpers - contain helper need for data process
-routers - contain routes of express app
-services - contain service to handle api
-twilio - contain service of Twilio
+- **config** - contain config file for firebase services
+- **controllers** - contain controller of express app
+- **helpers** - contain helper need for data process
+- **routers** - contain routes of express app
+- **services** - contain service to handle api
+- **twilio** - contain service of Twilio
 
 _**Before run the server please install package with npm i and add to .env file to the root level below variables**_
 
